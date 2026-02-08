@@ -14,7 +14,7 @@ export default function AdminSidebar() {
     <aside className="w-72 bg-white h-screen flex flex-col border-r border-red-200 shadow-xl fixed left-0 top-0 z-50 font-sans select-none">
       <div className="p-8 flex justify-center mb-4 hover:scale-105 transition-transform duration-300 cursor-pointer">
         <img 
-          src={Logo} 
+          src={Logo.src} 
           alt="PreCampus Admin" 
           className="w-32 h-auto object-contain" 
         />

@@ -13,7 +13,7 @@ export default function UniversitySidebar() {
       
       <div className="p-8 flex justify-center mb-4 cursor-pointer hover:scale-105 transition-transform duration-300">
         <img 
-          src={Logo} 
+          src={Logo.src} 
           alt="universidade Admin" 
           className="w-32 h-auto object-contain" 
         />

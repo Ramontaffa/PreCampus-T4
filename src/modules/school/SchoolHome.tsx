@@ -1,13 +1,15 @@
-import { 
-  RiCalendarCheckLine, 
-  RiGroupLine, 
-  RiTimeLine, 
+"use client";
+
+import {
+  RiCalendarCheckLine,
+  RiGroupLine,
+  RiTimeLine,
   RiAddLine,
   RiMore2Fill,
   RiSearchLine
 } from "@remixicon/react";
 
-import { useNavigate } from "react-router-dom"; 
+import { useRouter } from "next/navigation";
 import HomeLayout from "../../layout/HomeLayout";
 import SchoolSidebar from "./components/SchoolSidebar";
 
@@ -28,7 +30,7 @@ const mockEventos: EventoSummary[] = [
 ];
 
 export default function SchoolHome() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <HomeLayout sidebar={<SchoolSidebar />}>
@@ -43,8 +45,8 @@ export default function SchoolHome() {
           </p>
         </div>
         
-        <button 
-          onClick={() => navigate('/escola/criar-evento')} 
+        <button
+          onClick={() => router.push('/escola/criar-evento')}
           className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-6 rounded-full shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer flex items-center gap-2"
         >
           <RiAddLine size={20} />

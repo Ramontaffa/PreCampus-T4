@@ -1,6 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
 import Background from "../components/Background";
 import Logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -10,10 +11,10 @@ function Home() {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen">
         <div >
 
-          <img src={Logo} alt="precampus-logo" className="w-90 h-75"/>
+          <Image src={Logo} alt="precampus-logo" className="w-[360px] h-[300px] object-contain" />
 
           {/* Botão para voltar ao login */}
-          <Link to={"/login"}>
+          <Link href="/login" className="w-full">
             <button 
                 className="bg-blue-600 font-heading font-bold text-white px-6 py-2 rounded-full mt-14 hover:bg-blue-700 w-full cursor-pointer"
             >

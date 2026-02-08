@@ -1,3 +1,5 @@
+"use client";
+
 import HomeLayout from "../../../layout/HomeLayout";
 import SchoolSidebar from "../components/SchoolSidebar";
 
@@ -100,7 +102,7 @@ export default function AddNewEvent() {
 
     <div className="flex justify-center mt-6">
       <button
-        className="bg-green-500 hover:bg-green-500 text-white font-semibold px-18 py-3 rounded-xl transition"
+        className="bg-green-500 hover:bg-green-500 text-white font-semibold px-10 py-3 rounded-xl transition"
       >
         ENVIAR
       </button>

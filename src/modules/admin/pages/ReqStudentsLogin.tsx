@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { RiSearchLine, RiCloseCircleLine, RiCheckboxCircleLine } from "@remixicon/react";
 import HomeLayout from "../../../layout/HomeLayout";

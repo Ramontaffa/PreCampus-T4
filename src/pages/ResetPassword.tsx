@@ -1,10 +1,13 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { RiUserLine, RiLockLine } from "@remixicon/react";
 import Background from "../components/Background";
 import Logo from "../assets/logo.png";
-import { RiUserLine, RiLockLine } from "@remixicon/react"
 import Button from "../components/Button";
-import { useState } from "react";
-import ResetPasswordMessage from "./components/ResetPasswordMessage";
-import { Link } from "react-router-dom";
+import ResetPasswordMessage from "../components/ResetPasswordMessage";
 
 function ResetPassword() {
   const [showMessage, setShowMessage] = useState(false)
@@ -17,14 +20,14 @@ function ResetPassword() {
 
   return (
     <div className="min-h-screen bg-[#1E90FF] relative overflow-hidden">
-      {showMessage && <ResetPasswordMessage Close={(e) => {
+      {showMessage && <ResetPasswordMessage Close={() => {
         setShowMessage(false)
       }} />}
       <Background />
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen">
           <div className="bg-white/50 py-3 px-20 flex flex-col justify-center items-center gap-3 rounded-2xl">
-            <img src={Logo} alt="precampus-logo" className="w-35 h-29"/>
+            <Image src={Logo} alt="precampus-logo" className="w-[140px] h-[116px] object-contain" />
 
             <h2 className="text-xl font-semibold text-blue-800">Recuperação de   senha</h2>
             <p className="text-blue-900 mb-3">Selecione o tipo de usuário e digite o email:</p>
@@ -32,15 +35,10 @@ function ResetPassword() {
             <div className="bg-white rounded-full  flex flex-row items-center overflow-hidden">
               {
                 ['Estudante', 'Escola', 'Universidade'].map((value, index) => (
-                  <label className="cursor-pointer">
+                  <label className="cursor-pointer" key={value}>
                     <input type="radio" name="user-type" value={index} className="hidden peer" defaultChecked={value === "Estudante"} placeholder="Email" onChange={() => {
-                      setUserType(value);
-                      
-                      if (value === "Estudante") {
-                        setPlaceholder("Email");
-                      } else {
-                        setPlaceholder("Email da Instituição");
-                      }
+                      setUserType(value.toLowerCase());
+                      setPlaceholder(value === "Estudante" ? "Email" : "Email da Instituição");
                     }}></input>
                     <span className={`inline-block py-2 px-5 text-zinc-500 peer-checked:bg-blue-700 peer-checked:text-white ${["Estudante","Escola"].includes(value) ? "border-r" : ""}`}>{value}</span>
                   </label>
@@ -54,7 +52,7 @@ function ResetPassword() {
               </div>
               <Button text="Enviar" onClick={showAlertMessage}></Button>
             </div>
-            <Link to={`/login`} className="text-blue-600 border-b border-transparent cursor-pointer hover:border-blue-600 mt-5">Voltar</Link>
+            <Link href={`/login`} className="text-blue-600 border-b border-transparent cursor-pointer hover:border-blue-600 mt-5">Voltar</Link>
           </div>
       </div>
     </div>

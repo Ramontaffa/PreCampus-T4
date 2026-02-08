@@ -94,7 +94,7 @@ export default function SchoolEventDetails() {
           <div className="flex-1">
             <div className="w-full h-80 bg-gray-100 rounded-2xl overflow-hidden border-2 border-gray-100 relative group shadow-inner">
               <img 
-                src={EventoImg} 
+                src={EventoImg.src} 
                 alt="Preview do Evento" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

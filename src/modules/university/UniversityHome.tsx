@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import HomeLayout from "../../layout/HomeLayout";
-import UniversitySidebar from "./components/UniversitySidebar.tsx";
+import UniversitySidebar from "./components/UniversitySidebar";
 import Card from "../../components/Card";
 
 interface UniversityEvent {
@@ -59,16 +59,16 @@ export default function UniversityHome() {
         </p>
       </div>
 
-      <div className="h-30 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
         <Link 
-          to="/university/all-events" 
+          href="/universidade/atuacao-eventos" 
           className="flex items-center justify-center gap-2 bg-white border-2 border-purple-100 text-purple-600 font-bold py-4 px-6 rounded-2xl hover:border-purple-600 hover:bg-purple-50 transition-all active:scale-95"
         >
           <span>Explorar Eventos</span>
         </Link>
         
         <Link 
-          to="/university/my-registrations" 
+          href="/universidade/perfil" 
           className="flex items-center justify-center gap-2 bg-white border-2 border-purple-100 text-purple-600 font-bold py-4 px-6 rounded-2xl hover:border-purple-600 hover:bg-purple-50 transition-all active:scale-95"
         >
           <span>Minhas Inscrições</span>

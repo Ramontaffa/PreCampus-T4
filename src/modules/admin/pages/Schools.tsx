@@ -1,13 +1,8 @@
+"use client";
+
 import { useState } from "react";
-// Import dos ícones do Remix Icon
 import { RiCalendarLine, RiTimeLine, RiMapPinLine, RiCheckDoubleLine, RiSendPlane2Line } from "@remixicon/react";
-
-// Import do Layout Principal (ajuste se sua pasta layout estiver em outro lugar)
 import HomeLayout from "../../../layout/HomeLayout";
-
-// --- CORREÇÃO AQUI ---
-// Antes estava "./components...", mas como estamos na pasta 'pages', 
-// precisamos voltar um nível com "../" para achar a pasta 'components'
 import AdminSidebar from "../components/AdminSidebar";
 
 // Dados simulados
